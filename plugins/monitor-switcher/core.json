@@ -1,0 +1,20 @@
+// The Monitor Switcher plugin: each monitor's brightness, resolution, refresh rate,
+// HDR, variable refresh and the main monitor, set as a game starts. Ectomatter
+// makes each change, writes down what it was first, and puts it back as the
+// game quits (docs/core-protocol.md, section 11). Monitors are told apart by
+// their EDID, never by the port they're on.
+{
+  "id": "monitor-switcher",
+  "kind": "plugin",
+  "name": "Monitor Switcher",
+  "version": "1.0.0",
+  "protocol": 4,          // the core protocol it speaks
+  "ectomatter": "0.1.0",    // the oldest Ectomatter it runs on
+  "module": "core.wasm",  // built from module/ by tools/build-plugins.sh
+  "license": "GPL-3.0-only",
+  "description": "Brightness, resolution, HDR and more, set for each game.",
+  "glyph": "glyph.svg",   // Phosphor's monitor, Light (phosphoricons.com, MIT)
+  "adds": ["game"],       // a section on each game's and app's page
+  "systems": ["linux"],   // Ectomatter reaches the monitors on KDE Plasma alone, so far
+  "uses": ["monitors"]
+}
